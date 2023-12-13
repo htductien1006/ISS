@@ -1,0 +1,38 @@
+<!-- audit_log.html -->
+
+{% extends 'D:\MyUniversity\HK231\Informatio_Systems_Security\e_lms\e_learn\templates\dashboard\admin\base.html' %}
+
+{% block title %}Audit Log{% endblock %}
+
+{% block body %}
+  <div class="container mt-3">
+    <h2>Audit Log</h2>
+
+    {% if audit_log_entries %}
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>DB User</th>
+            <th>Object Name</th>
+            <th>Policy Name</th>
+            <th>SQL Text</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in audit_log_entries %}
+            <tr>
+              <td>{{ entry.0 }}</td>
+              <td>{{ entry.1 }}</td>
+              <td>{{ entry.2 }}</td>
+              <td>{{ entry.3 }}</td>
+              <td>{{ entry.4 }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No audit log entries found.</p>
+    {% endif %}
+  </div>
+{% endblock %}

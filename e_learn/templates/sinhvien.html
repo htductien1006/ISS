@@ -1,0 +1,43 @@
+<!-- student_list.html -->
+{% extends 'D:\MyUniversity\HK231\Informatio_Systems_Security\e_lms\e_learn\templates\dashboard\learner\base.html' %}
+
+{% block title %}Student List{% endblock %}
+
+{% block body %}
+  <div class="container mt-3">
+    <h2>Student List</h2>
+
+    {% if student %}
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Birthdate</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Course ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for info in student %}
+            <tr>
+              <td>{{ info.0 }}</td>
+              <td>{{ info.1 }}</td>
+              <td>{{ info.2 }}</td>
+              <td>{{ info.3 }}</td>
+              <td>{{ info.4 }}</td>
+              <td>{{ info.5 }}</td>
+              <td>{{ info.6 }}</td>
+              <td>{{ info.7 }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No student information found.</p>
+    {% endif %}
+  </div>
+{% endblock %}

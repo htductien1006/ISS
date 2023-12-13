@@ -1,0 +1,17 @@
+asgiref                   
+beautifulsoup4            
+cffi                      
+crispy-bootstrap3         
+cryptography              
+Django                    
+django-bootstrap3         
+django-crispy-forms       
+django-forms-bootstrap    
+django-registration-redux 
+django-widget-tweaks      
+oracledb                  
+pycparser                 
+setuptools                
+soupsieve                 
+sqlparse                  
+tzdata                   
